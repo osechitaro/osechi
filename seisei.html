@@ -12,8 +12,8 @@
 			var front = document.getElementById("front").value;
 			var back = document.getElementById("back").value;
 			batsu = document.oseform.osebatsu.checked;
-	    ctx.fillStyle = 'rgb(202,239,172)';
-	    ctx.fillRect( 0, 0, 433, 72 );
+		    	ctx.fillStyle = 'rgb(202,239,172)';
+		    	ctx.fillRect( 0, 0, 433, 72 );
 			var img = new Image();
 			if (batsu == true) {
 				img.src = "./yajibatsu.png";
@@ -22,7 +22,7 @@
 				img.src = "./yaji.png";
 				ctx.drawImage(img, 191, 12, 57, 47);
 			}
-			ctx.font = "bold 64px '游 ゴシック',sans-serif";
+			ctx.font = "bold 64px 'M+ 1p heavy','游 ゴシック',sans-serif";
 			ctx.lineWidth = 3;
 			ctx.fillStyle = "white";
 			ctx.fillText(front, 15, 60, 160);
@@ -34,15 +34,15 @@
 			ctx.strokeText(back, 255, 60, 160);
 		}
 		function seisei(){
-	  	var png = cvs.toDataURL();
-	  	document.getElementById("newImg").src = png;
+	  		var png = cvs.toDataURL();
+	  		document.getElementById("newImg").src = png;
 		}
 	</script>
 	<form name="oseform">
-	前<input type="text" name="ftex" id="front" size="15" maxlength="24">,
-	後ろ<input type="text" name="btex" id="back" size="15" maxlength="24">
-	<input type="checkbox" name="btumu" id="osebatsu" value="batsu">バツ有り
-	<input type="button" value="反映" onclick="hanei()"><br>
+	前<input type="text" name="ftex" id="front" size="15" maxlength="24"><br>
+	後ろ<input type="text" name="btex" id="back" size="15" maxlength="24"><br>
+	<input type="checkbox" name="btumu" id="osebatsu" value="batsu">バツ有り<br>
+	<input type="button" value="反映" onclick="hanei()">
 	<input type="button" value="画像に変換" onclick="seisei()">
 	</form>
 	<div><img id="newImg"></div>
