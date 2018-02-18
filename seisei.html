@@ -1,0 +1,50 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+	<title>おせちん〇こ　ジェネレーター</title>
+</head>
+<body>
+	<canvas id="cv1" width="433" height="72"></canvas>
+	<script>
+		var cvs = document.getElementById("cv1");
+		var ctx = cvs.getContext("2d");
+		function hanei(){
+			var front = document.getElementById("front").value;
+			var back = document.getElementById("back").value;
+			batsu = document.oseform.osebatsu.checked;
+	    ctx.fillStyle = 'rgba(202,239,172,0.8)';
+	    ctx.fillRect( 0, 0, 433, 72 );
+			var img = new Image();
+			if (batsu == true) {
+				img.src = "./yajibatsu.png";
+				ctx.drawImage(img, 188, 8, 57, 57);
+			}else{
+				img.src = "./yaji.png";
+				ctx.drawImage(img, 191, 12, 57, 47);
+			}
+			ctx.font = "bold 64px '游 ゴシック'";
+			ctx.lineWidth = 3;
+			ctx.fillStyle = "white";
+			ctx.fillText(front, 15, 60, 160);
+			ctx.strokeStyle = "black";
+			ctx.strokeText(front, 15, 60, 160);
+			ctx.fillStyle = "#ea64a5";
+			ctx.fillText(back, 255, 60, 160);
+			ctx.strokeStyle = "white";
+			ctx.strokeText(back, 255, 60, 160);
+		}
+		function seisei(){
+	  	var png = cvs.toDataURL();
+	  	document.getElementById("newImg").src = png;
+		}
+	</script>
+	<form name="oseform">
+	前<input type="text" name="ftex" id="front" size="15" maxlength="24">,
+	後ろ<input type="text" name="btex" id="back" size="15" maxlength="24">
+	<input type="checkbox" name="btumu" id="osebatsu" value="batsu">バツ有り
+	<input type="button" value="反映" onclick="hanei()"><br>
+	<input type="button" value="画像に変換" onclick="seisei()">
+	</form>
+	<div><img id="newImg"></div>
+</body>
+</html>
