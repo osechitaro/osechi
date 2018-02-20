@@ -40,10 +40,14 @@
 			var img = new Image();
 			if (batsu == true) {
 				img.src = "./yajibatsu.png";
-				ctx.drawImage(img, 188, 8, 57, 57);
+				img.onload = function() {
+					ctx.drawImage(img, 188, 8, 57, 57);
+				}
 			}else{
 				img.src = "./yaji.png";
-				ctx.drawImage(img, 191, 12, 57, 47);
+				img.onload = function() {
+					ctx.drawImage(img, 191, 12, 57, 47);
+				}
 			}
 			ctx.font = "bold 64px 'M+ 1p heavy','游 ゴシック',sans-serif";
 			ctx.lineWidth = 3;
