@@ -1,98 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<meta name="keywords" content="おせちんこ,ジェネレーター,おせちんこジェネレーター,おせち〇こジェネレーター,おせちん〇こジェネレーター">
-	<meta http-equiv="Content-Style-Type" content="text/css">
-	<meta http-equiv="Content-Script-Type" content="text/javascript"> 
-	<title>おせちん〇こ　ジェネレーター</title>
-	<style type="text/css">
-	<!--
-	p {
-	font-size: 200%;
-	}
-	.inner{
-	  width: 80%;
-	  margin: 0 auto;
-	  max-width: 500px;
-	}
-	.center{
-	  border: 1px solid #aaa;
-	  width: 500px;
-	  text-align: center;
-	}
-	//-->
-	</style>
+<meta http-equiv="refresh" content="0;URL=https://osechitaro.github.io/osechi/">
+<title>�ړ�</title>
 </head>
 <body>
-<div class="inner"><div class="center">
-<p>おせちん〇こ　ジェネレーター</p>
-	<canvas id="cv1" width="433" height="72"></canvas>
-	<script>
-		var cvs = document.getElementById("cv1");
-		var ctx = cvs.getContext("2d");
-		function hanei(){
-			var front = document.getElementById("front").value;
-			var back = document.getElementById("back").value;
-			batsu = document.oseform.osebatsu.checked;
-		    	ctx.fillStyle = 'rgb(202,239,172)';
-		    	ctx.fillRect( 0, 0, 433, 72 );
-			var img = new Image();
-			if (batsu == true) {
-				img.src = "./yajibatsu.png";
-				img.onload = function() {
-					ctx.drawImage(img, 188, 8, 57, 57);
-				}
-			}else{
-				img.src = "./yaji.png";
-				img.onload = function() {
-					ctx.drawImage(img, 191, 12, 57, 47);
-				}
-			}
-			ctx.font = "bold 64px 'M+ 1p heavy','游 ゴシック',sans-serif";
-			ctx.lineWidth = 3;
-			ctx.fillStyle = "white";
-			ctx.fillText(front, 15, 60, 160);
-			ctx.strokeStyle = "black";
-			ctx.strokeText(front, 15, 60, 160);
-			var num = document.oseform.color.selectedIndex;
-			if (num == 1) {
-				ctx.fillStyle = "blue";
-			}else{
-				ctx.fillStyle = "#ea64a5";
-			}
-			ctx.fillText(back, 255, 60, 160);
-			ctx.strokeStyle = "white";
-			ctx.strokeText(back, 255, 60, 160);
-		}
-		function seisei(){
-	  		var png = cvs.toDataURL();
-	  		document.getElementById("newImg").src = png;
-		}
-	</script>
-	<form name="oseform">
-		前<input type="text" name="ftex" id="front" size="15" maxlength="24"><br>
-		後ろ<input type="text" name="btex" id="back" size="15" maxlength="24"><br>
-		<input type="checkbox" name="btumu" id="osebatsu" value="batsu">バツ有り&nbsp;
-		色
-		<select name="color" size="1">
-			<option value="guest" selected>ピンク(ゲスト)</option>
-			<option value="majo">青(魔女)</option>
-		</select><br>
-		<input type="button" value="反映" onclick="hanei()">
-		<input type="button" value="画像に変換" onclick="seisei()"><br>
-		※反映で画像が出ない場合は何度も押してみてください<br>
-		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="おせちん〇こジェネレーター" data-url="https://osechitaro.github.io/osechi/seisei.html" data-hashtags="おせちんこジェネレーター" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<div><img id="newImg"></div>
-		(c) 2018 sinma(しんま). Twitter <a href="https://twitter.com/sinma_tokkai">@sinma_tokkai</a>
-		<!--カウンター記述-->
-		<script language="Javascript">
-		document.write('<a href="http://www.free-counter.jp/"></a>');</script><noscript>
-		<a href="http://hqm.f-counter.com/">counter</a>
-		<a href="http://www.free-counter.jp/">カウンター</a></noscript>
-		<a href="http://www.free-counter.jp/"><img src="https://www.f-counter.net/j/29/1518956343/" alt="カウンター"></a>
-		<!--カウンター記述終了-->
-	</form>
-</div></div>
+<p>�ړ���</p>
+�ړ����Ȃ��ꍇ��<a href="https://osechitaro.github.io/osechi/">�N���b�N</a>
 </body>
 </html>
